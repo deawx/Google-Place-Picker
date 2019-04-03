@@ -3,7 +3,7 @@ Google's Place Picker library for web like Android and iOS
 
 <img src="https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/PlacePicker.png" width="150" height="150"></img>
 
-###Features
+### Features
 
 - No need to write a lots of code for Google Place Picker
 - Supports with jquery, bootstrap and fontawesome libraries, no need of any more libraries;
@@ -16,10 +16,10 @@ Google's Place Picker library for web like Android and iOS
 
 
 
-####Usage
+### Usage
 
 
-####Javascript　
+#### Javascript　
 
 ```javascript
 $(document).ready(function(){
@@ -37,28 +37,15 @@ $(document).ready(function(){
 
 ```
 
-####HTML code
+#### HTML code
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 ```
 
-###Images
-
-Image:
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
-
-> How map button lokks like in HTML Page
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
-
-> How map button lokks like in HTML Page
-
-
                     
-###Tables
+#### Tables
                     
 
 #### Functions
@@ -73,6 +60,20 @@ Image:
 | center      | Default map location |
 | zoom      | Default map zoom |
 
+
+#### Images
+
+Image:
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
+
+> How map button lokks like in HTML Page
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
+
+> How map button lokks like in HTML Page
+
+
 ----
 
-###End
+### End
