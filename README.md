@@ -14,6 +14,17 @@ Google's Place Picker library for web like Android and iOS
 - displays a button an the end of yout input, by clicking button you will see popup screen
 
 
+#### Images
+
+Image:
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
+
+> How map button lokks like in HTML Page
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
+
+> How map button lokks like in HTML Page
 
 
 ### Usage
@@ -59,20 +70,6 @@ $(document).ready(function(){
 | title      | Popup Title |
 | center      | Default map location |
 | zoom      | Default map zoom |
-
-
-#### Images
-
-Image:
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
-
-> How map button lokks like in HTML Page
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
-
-> How map button lokks like in HTML Page
-
 
 ----
 
