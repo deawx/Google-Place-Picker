@@ -40,7 +40,7 @@ $(document).ready(function(){
 #### HTML code
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/PlacePicker.js"></script>
 
 ```
 
