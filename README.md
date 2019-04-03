@@ -1,7 +1,7 @@
 # Google Place Picker
 Google's Place Picker library for web like Android and iOS
 
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/PlacePicker.png )
+<img src="https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/PlacePicker.png" width="150" height="150"></img>
 
 ###Features
 
