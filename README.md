@@ -5,6 +5,7 @@ Google's Place Picker library for web like Android and iOS
 
 ### Features
 
+- No need to write a single of html or jQuery or anything,it taks simple adding PlacePicker to your textbox
 - No need to write a lots of code for Google Place Picker
 - Supports with jquery, bootstrap and fontawesome libraries, no need of any more libraries;
 - easily to use this PlacePicker with simple steps
