@@ -6,25 +6,12 @@ Google's Place Picker library for web like Android and iOS
 ### Features
 
 - No need to write a lots of code for Google Place Picker
-- Supports with jquery(3.0 or 3+), bootstrap(3.0 or 3+) and fontawesome libraries, no need of any more libraries;
+- Supports with jquery(3.0 or 3+), bootstrap(3.0 or 3+) and fontawesome libraries
 - easily to use this PlacePicker with simple steps
 - You can pick location from map or you can search location
 - Compatible with all  browsers (IE8+), and mobiles;
 - Support with Google API Key;
 - displays a button an the end of yout input, by clicking button you will see popup screen
-
-
-#### Images
-
-Image:
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
-
-> How map button lokks like in HTML Page
-
-![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
-
-> How map button lokks like in HTML Page
 
 
 ### Usage
@@ -55,6 +42,18 @@ $(document).ready(function(){
 <script src="https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/PlacePicker.js"></script>
 
 ```
+
+#### Images
+
+Image:
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.43.24%20PM.png)
+
+> How map button lokks like in HTML Page
+
+![](https://raw.githubusercontent.com/bewithdhanu/Google-Place-Picker/master/Screenshot%202019-04-03%20at%204.44.31%20PM.png)
+
+> How map button lokks like in HTML Page
 
 ### Required Plugins
 - jQuery
