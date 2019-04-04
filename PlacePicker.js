@@ -4,8 +4,8 @@ var $placePicker = null,
     n=null,
     placePickerMap = null,
     marker = false,
-    geocoder = new google.maps.Geocoder,
     service = null,
+    geocoder = null,
     result = null;
 $.fn.PlacePicker = function (t) {
     n = {
@@ -19,13 +19,13 @@ $.fn.PlacePicker = function (t) {
     $placePicker = this;
     $(this).wrap( "<div></div>" );
     $(this).closest("div").hover(function(){
-        var left = $(this).width()-20;
-        var top = 0;
+        var left = $(this).offset().left+$(this).width();
+        var top = $(this).offset().top;
         var btn = $('<div class="placePickerUIButton" title="Pick location from map" style="position:absolute;top: '+top+'px;left: '+left+'px;z-index: 1000;"><div class="btn btn-xs btn-default"><i class="fa fa-map"></i></div></div>');
         $(this).append(btn);
         btn.click(function(){
             if($("body").find(".modal.placePicker").length==0){
-                $("body").append('<div class="modal fade in placePicker" role="dialog"><div class="modal-dialog modal-lg" style="width: 90%;"><div class="modal-content"><div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button><h4 class="modal-title">Place Picker</h4></div><div class="modal-body" style="padding: 0px;"><div class="row"><div class="col-md-12" style="padding: 10px;position: absolute;z-index: 1;background: #fff;width: 30%;margin-left: 20px;margin-top: 4px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;"><div class="input-group input-group-sm"> <input type="text" class="form-control pull-right autocomplete" placeholder="Search here or pick a location on map" style="border: 1px solid #dddddd;" autocomplete="off"><div class="input-group-btn"> <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div></div><div class="address_content" style="display: none"><div class="address" style="margin-top: 10px;display: block;padding: 9.5px;font-size: 13px;color: #333;background-color: #f5f5f5;border: 1px solid #ccc;border-radius: 4px;"></div><div class="row"><div class="col-md-6"><div class="btn btn-sm btn-default" style="width: 100%;margin-top: 10px;margin-bottom: 10px;" data-dismiss="modal"><i class="fa fa-close"></i> Cancel</div></div><div class="col-md-6"><div class="btn btn-sm btn-success placePickerSubmit" style="width: 100%;margin-top: 10px;margin-bottom: 10px;"><i class="fa fa-check"></i> Select</div></div></div></div></div><div class="col-md-12"><div id="placePickerMap" style="height:calc( 80vh );width:100%"></div></div></div></div></div></div></div>');
+                $("body").append('<div class="modal fade in placePicker" role="dialog"><style>.pac-container{ z-index: 10000; }</style><div class="modal-dialog modal-lg" style="width: 90%;"><div class="modal-content"><div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button><h4 class="modal-title">Place Picker</h4></div><div class="modal-body" style="padding: 0px;"><div class="row"><div class="col-md-12" style="padding: 10px;position: absolute;z-index: 1;background: #fff;width: 30%;margin-left: 20px;margin-top: 4px;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;"><div class="input-group input-group-sm"> <input type="text" class="form-control pull-right autocomplete" placeholder="Search here or pick a location on map" style="border: 1px solid #dddddd;" autocomplete="off"><div class="input-group-btn"> <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button></div></div><div class="address_content" style="display: none"><div class="address" style="margin-top: 10px;display: block;padding: 9.5px;font-size: 13px;color: #333;background-color: #f5f5f5;border: 1px solid #ccc;border-radius: 4px;"></div><div class="row"><div class="col-md-6"><div class="btn btn-sm btn-default" style="width: 100%;margin-top: 10px;margin-bottom: 10px;" data-dismiss="modal"><i class="fa fa-close"></i> Cancel</div></div><div class="col-md-6"><div class="btn btn-sm btn-success placePickerSubmit" style="width: 100%;margin-top: 10px;margin-bottom: 10px;"><i class="fa fa-check"></i> Select</div></div></div></div></div><div class="col-md-12"><div id="placePickerMap" style="height:calc( 80vh );width:100%"></div></div></div></div></div></div></div>');
             }
             result = null;
             $modal = $(".placePicker");
@@ -33,11 +33,10 @@ $.fn.PlacePicker = function (t) {
             $(".placePicker").find(".address").html("");
             $(".placePicker").find(".address_content").hide();
             $(".placePicker").find(".autocomplete").val("");
-            geocoder = new google.maps.Geocoder
             placePickerMap = null
             marker = false;
             if (!(typeof google === 'object' && typeof google.maps === 'object')) {
-                $.getScript('https://maps.googleapis.com/maps/api/js?key='+params.key, function() {
+                $.getScript('https://maps.googleapis.com/maps/api/js?key='+params.key+'&libraries=places', function() {
                     initPlacePickerMap(params)
                 }); 
             } else{
@@ -63,6 +62,8 @@ $.fn.PlacePicker = function (t) {
     
 };
 function initPlacePickerMap(params) {
+    service = new google.maps.Geocoder;
+    geocoder= new google.maps.Geocoder;
     setTimeout(function() {
         var loc = new google.maps.LatLng(params.center.lat, params.center.lng);
         placePickerMap = new google.maps.Map(document.getElementById('placePickerMap'), {
@@ -137,6 +138,7 @@ function convertAddress(){
     data["sublocality_level_2"]="";
     data["route"]="";
     data["locality"]="";
+    data["formatted_address"] = result.formatted_address;
     $(result.address_components).each(function(i,address){
         $(address.types).each(function(j,type){
             if(type=="country"){
