@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="PlacePicker.png">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Google Place Picker using jQuery </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 
@@ -34,6 +34,7 @@
     $(document).ready(function(){
     	$("#pickup_country").PlacePicker({
     		title:"Popup Title Here",
+    		btnClass:"btn btn-secondary btn-sm",
     		key:"AIzaSyBAGm4WfH69Ny5DmWFAA88s26UwiNqHMn8",
     		center: {lat: 17.6868, lng: 83.2185},
     		success:function(data,address){
@@ -45,5 +46,13 @@
     	});
     });
 </script>
+<style>
+.form-signin {
+    width: 100%;
+    max-width: 630px;
+    padding: 15px;
+    margin: 0 auto;
+}
+</style>
   </body>
 </html>

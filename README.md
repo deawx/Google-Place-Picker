@@ -37,6 +37,7 @@ $(document).ready(function(){
 	$("#pickup_country").PlacePicker({
 		title:"Popup Title Here",
 		key:"YOUR_API_KEY",
+		btnClass:"btn btn-secondary btn-sm",
 		center: {lat: 17.6868, lng: 83.2185},
 		success:function(data,address){
 			//data contains address elements and 
@@ -69,6 +70,7 @@ $(document).ready(function(){
 | key      | Your Google API Key |
 | title      | Popup Title |
 | center      | Default map location |
+| btnClass      | Default btn class which comes on hover |
 | zoom      | Default map zoom |
 
 ----
