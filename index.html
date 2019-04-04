@@ -9,10 +9,8 @@
 
     <title>Google Place Picker using jQuery </title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-
     <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" />
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
@@ -34,7 +32,7 @@
     $(document).ready(function(){
     	$("#pickup_country").PlacePicker({
     		title:"Popup Title Here",
-    		btnClass:"btn btn-secondary btn-sm",
+    		btnClass:"btn btn-xs btn-default",
     		key:"AIzaSyBAGm4WfH69Ny5DmWFAA88s26UwiNqHMn8",
     		center: {lat: 17.6868, lng: 83.2185},
     		success:function(data,address){
