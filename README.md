@@ -56,6 +56,11 @@ $(document).ready(function(){
 
 ```
 
+### Required Plugins
+- jQuery
+- Bootstrap (css & js)
+- Font Awesone
+
                     
 #### Tables
                     
